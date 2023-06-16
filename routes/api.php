@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\TodoController;
+use App\Http\Controllers\Api\CompanyController;
+use App\Http\Controllers\Api\CompanyBillingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +25,13 @@ Route::post('todo/create', [TodoController::class, 'store'])->name('api.todo.cre
 Route::get('todo/{id}', [TodoController::class, 'show'])->name('api.todo.show');
 Route::put('todo/{id}', [TodoController::class, 'update'])->name('api.todo.update');
 Route::delete('todo/{id}', [TodoController::class, 'destroy'])->name('api.todo.destroy');
+
+Route::post('company/create', [CompanyController::class, 'store'])->name('api.company.create');
+Route::get('company/{id}', [CompanyController::class, 'show'])->name('api.company.show');
+Route::put('company/{id}', [CompanyController::class, 'update'])->name('api.company.update');
+Route::delete('company/{id}', [CompanyController::class, 'delete'])->name('api.company.delete');
+
+Route::post('company/{id}/billing/create', [billingaddressController::class, 'store'])->name('api.company.billing.create');
+Route::get('company-billing/{id}', [billingaddressController::class, 'show'])->name('api.company.billing.show');
+Route::put('company-billing/{id}', [billingaddressController::class, 'update'])->name('api.company.billing.update');
+Route::delete('company-billing/{id}', [billingaddressController::class, 'delete'])->name('api.company.billing.delete');
